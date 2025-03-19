@@ -16,18 +16,19 @@
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             color: #fff;
             position: relative;
+            overflow: hidden;
         }
         .background-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('logo.png'); /* Replace with actual logo file */
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: url('logo.png');
             background-repeat: repeat;
-            background-size: 150px;
+            background-size: 200px;
             background-position: center;
-            opacity: 0.1;
+            opacity: 0.3;
             z-index: -1;
             transform: rotate(-30deg);
         }
@@ -62,10 +63,6 @@
         .highlight-orange {
             color: orange;
         }
-        .brand {
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
         .brand .pro {
             color: red;
         }
@@ -78,11 +75,10 @@
 <body>
     <div class="background-overlay"></div>
     <div class="container">
-        <h1>Gracias por venir a nuestra gran apertura de <div class="brand"><span class="pro">pro</span><span class="vap">vap</span></div> en el <span class="highlight-orange">MUT</span></h1>
+        <h1>Gracias por venir a nuestra gran apertura en <span class="highlight-orange">MUT</span> de <span class="brand"><span class="pro">pro</span><span class="vap">vap</span></span></h1>
         <p>Como agradecimiento, queremos entregarte este código de descuento para compras presenciales u online:</p>
         <div class="discount-code" id="discountCode">Cargando...</div>
-        <a href="#" id="redirectButton" class="button">Ir a <div class="brand"><span class="pro">pro</span><span class="vap">vap</span></div></a>
-        <div class="brand"><span class="pro">pro</span><span class="vap">vap</span></div>
+        <a href="#" id="redirectButton" class="button">Usar Código</a>
     </div>
     
     <script>
@@ -95,7 +91,7 @@
         document.getElementById('discountCode').textContent = discountCode;
         
         const redirectButton = document.getElementById('redirectButton');
-        redirectButton.href = 'https://provap.cl';
+        redirectButton.href = 'https://provap.cl'; // Reemplazar con la URL real
     </script>
 </body>
 </html>
