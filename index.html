@@ -17,6 +17,8 @@
             color: #fff;
             position: relative;
             overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .background-overlay {
             position: fixed;
@@ -51,17 +53,6 @@
                 background: linear-gradient(to bottom, #ff9966, #ff5e62);
             }
         }
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
-            opacity: 0.3;
-            transform: rotate(30deg);
-        }
         .discount-code {
             font-size: 1.8em;
             font-weight: bold;
@@ -79,6 +70,8 @@
             cursor: pointer;
             text-decoration: none;
             transition: 0.3s;
+            position: relative;
+            z-index: 2;
         }
         .button:hover {
             background: #ffc107;
