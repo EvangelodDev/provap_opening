@@ -24,28 +24,20 @@
 
     .background-overlay {
       position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background-image: url('logo.png'); /* Reemplaza con tu logo */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('logo.png');
       background-repeat: repeat;
-      background-size: 180px;
-      background-position: center;
-      opacity: 0.1;
+      background-size: 150px 150px; /* Smaller logos */
+      background-position: 0 0;
+      opacity: 0.08;
       z-index: -1;
-      filter: blur(2px);
-      transform: rotate(-25deg);
-      animation: moveBackground 60s linear infinite;
-    }
-
-    @keyframes moveBackground {
-      0% {
-        transform: rotate(-25deg) translate(0, 0);
-      }
-      100% {
-        transform: rotate(-25deg) translate(50px, 50px);
-      }
+      filter: blur(1.5px);
+      animation: scrollBackground 90s linear infinite;
+      background-origin: content-box;
+      padding: 30px; /* Fake spacing between logos */
     }
 
     .container {
