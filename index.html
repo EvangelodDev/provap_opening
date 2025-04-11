@@ -1,114 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por Venir - MUT</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .background-overlay {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image: url('logo.png');
-            background-repeat: repeat;
-            background-size: 200px;
-            background-position: center;
-            opacity: 0.3;
-            z-index: -1;
-            transform: rotate(-30deg);
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-            width: 90%;
-            position: relative;
-            overflow: hidden;
-        }
-        @media (max-width: 600px) {
-            .container {
-                width: 85%;
-                padding: 20px;
-            }
-            body {
-                background: linear-gradient(to bottom, #ff9966, #ff5e62);
-            }
-        }
-        .discount-code {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #ffeb3b;
-            margin: 15px 0;
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 1.2em;
-            color: #333;
-            background: #ffeb3b;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-            position: relative;
-            z-index: 2;
-        }
-        .button:hover {
-            background: #ffc107;
-        }
-        .highlight-orange {
-            color: orange;
-        }
-        .brand .pro {
-            color: red;
-        }
-        .brand .vap {
-            color: white;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gracias por Venir - MUT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #f0f0f0, #dcdcdc);
+      color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      max-width: 500px;
+      width: 100%;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .brand .pro {
+      color: #e53935;
+    }
+
+    .brand .vap {
+      color: #000;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .discount-code {
+      font-size: 1.6em;
+      font-weight: 600;
+      color: #4caf50;
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1em;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.9s;
+    }
+
+    .button:hover {
+      background: #43a047;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="background-overlay"></div>
-    <div class="container">
-        <h1>Bienvenido a la experiencia <span class="brand"><span class="pro">PRO</span><span class="vap">VAP, The Vape Store</span></span> en <span class="highlight-orange">MUT</span></h1>
-        <p>Agradecemos tu presencia en nuestra apertura con un obsequio especial: un código de descuento válido en compras físicas y online.</p>
-        <div class="discount-code" id="discountCode">Cargando...</div>
-        <a href="#" id="redirectButton" class="button">Usar Código</a>
-    </div>
-    
-    <script>
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        
-        const discountCode = getQueryParam('code') || 'SIN-CÓDIGO';
-        document.getElementById('discountCode').textContent = discountCode;
-        
-        const redirectButton = document.getElementById('redirectButton');
-        redirectButton.href = 'https://www.provap.cl'; // Reemplazar con la URL real
-    </script>
+  <div class="container">
+    <h1>Bienvenido a la experiencia <span class="brand"><span class="pro">PRO</span><span class="vap">VAP</span></span> en MUT</h1>
+    <p>Gracias por acompañarnos en nuestra apertura. Aquí tienes un código de descuento para usar en tienda o en línea.</p>
+    <div class="discount-code" id="discountCode">Cargando...</div>
+    <a href="#" id="redirectButton" class="button">Usar Código</a>
+  </div>
+
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const discountCode = getQueryParam('code') || 'SIN-CÓDIGO';
+    document.getElementById('discountCode').textContent = discountCode;
+
+    const redirectButton = document.getElementById('redirectButton');
+    redirectButton.href = 'https://www.provap.cl'; // Reemplazar con URL real
+  </script>
 </body>
 </html>
 
