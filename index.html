@@ -29,11 +29,9 @@
       width: 200%;
       height: 200%;
       background-image: url('logo.png'); /* Reemplaza con tu logo */
-      background-repeat: space;
-      background-size: 180px;
-      background-origin: content-box;
-      padding: 50px; /* Adds artificial space between logos */
-      background-position: center;
+      background-repeat: repeat; /* Repeat the logo */
+      background-size: 180px; /* Set the size of the logo */
+      background-position: 0 0, 90px 90px; /* Stagger the positions diagonally */
       opacity: 0.1;
       z-index: -1;
       filter: blur(2px);
@@ -153,3 +151,4 @@
   </script>
 </body>
 </html>
+
