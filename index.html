@@ -14,8 +14,8 @@
       margin: 0;
       font-family: 'Inter', Arial, sans-serif;
       text-align: center;
-      background: linear-gradient(to right, #f9f9f9, #e0e0e0);
-      color: #333;
+      background: linear-gradient(to right, #121212, #1f1f1f);
+      color: #fff;
       padding: 20px;
       box-sizing: border-box;
       position: relative;
@@ -28,20 +28,31 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background-image: url('logo.png'); /* Asegúrate que 'logo.png' esté en la misma carpeta */
+      background-image: url('logo.png'); /* Reemplaza con tu logo */
       background-repeat: repeat;
-      background-size: 160px;
+      background-size: 180px;
       background-position: center;
-      opacity: 0.05;
+      opacity: 0.1;
       z-index: -1;
+      filter: blur(2px);
       transform: rotate(-25deg);
+      animation: moveBackground 60s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        transform: rotate(-25deg) translate(0, 0);
+      }
+      100% {
+        transform: rotate(-25deg) translate(50px, 50px);
+      }
     }
 
     .container {
-      background: #ffffffcc;
+      background: rgba(0, 0, 0, 0.7);
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
       max-width: 500px;
       width: 100%;
       opacity: 0;
@@ -65,11 +76,11 @@
     }
 
     .brand .pro {
-      color: #e53935;
+      color: #ff4d4d;
     }
 
     .brand .vap {
-      color: #000;
+      color: #fff;
       font-weight: bold;
     }
 
@@ -82,7 +93,7 @@
     .discount-code {
       font-size: 1.6em;
       font-weight: 600;
-      color: #4caf50;
+      color: #ffeb3b;
       margin: 20px 0;
       opacity: 0;
       animation: fadeIn 1s ease forwards;
@@ -93,8 +104,8 @@
       display: inline-block;
       padding: 12px 24px;
       font-size: 1em;
-      background: #4caf50;
-      color: white;
+      background: #ffeb3b;
+      color: #000;
       border: none;
       border-radius: 8px;
       text-decoration: none;
@@ -106,7 +117,7 @@
     }
 
     .button:hover {
-      background: #43a047;
+      background: #ffc107;
     }
 
     @media (max-width: 600px) {
@@ -120,7 +131,7 @@
   <div class="background-overlay"></div>
 
   <div class="container">
-    <h1>Bienvenido a la experiencia <span class="brand"><span class="pro">PRO</span><span class="vap">VAP</span></span> en MUT</h1>
+    <h1>Bienvenido a la experiencia <span class="brand"><span class="pro">PRO</span><span class="vap">VAP, The Vape Store</span></span> en MUT</h1>
     <p>Gracias por acompañarnos en nuestra apertura. Aquí tienes un código de descuento para usar en tienda o en línea.</p>
     <div class="discount-code" id="discountCode">Cargando...</div>
     <a href="#" id="redirectButton" class="button">Usar Código</a>
