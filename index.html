@@ -22,29 +22,33 @@
       overflow: hidden;
     }
 
-    .background-overlay {
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background-image: url('logo.png'); /* Reemplaza con tu logo */
-      background-repeat: repeat; /* Repeat the logo */
-      background-size: 180px; /* Set the size of the logo */
-      background-position: 0 0, 90px 90px; /* Stagger the positions diagonally */
-      opacity: 0.1;
-      z-index: -1;
-      filter: blur(2px);
-      transform: rotate(-25deg);
-      animation: moveBackground 60s linear infinite;
-    }
+.background-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    url('logo.png'),
+    url('logo.png');
+  background-repeat: repeat;
+  background-size: 210px; /* Tamaño total: logo + espacio */
+  background-position: 
+    0 0,               /* primera capa */
+    100px 60px;       /* segunda capa desplazada (intercalada) */
+  opacity: 0.1;
+  z-index: -1;
+  filter: blur(0.5px);
+  transform: rotate(-25deg);
+  animation: moveBackground 120s linear infinite;
+}
 
     @keyframes moveBackground {
       0% {
         transform: rotate(-25deg) translate(0, 0);
       }
       100% {
-        transform: rotate(-25deg) translate(50px, 50px);
+        transform: rotate(-25deg) translate(200px, 200px);
       }
     }
 
