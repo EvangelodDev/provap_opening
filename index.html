@@ -1,158 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gracias por Venir - MUT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(to right, #121212, #1f1f1f);
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-    }
-
-.background-overlay {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-image: 
-    url('logo.png'),
-    url('logo.png');
-  background-repeat: repeat;
-  background-size: 210px; /* Tamaño total: logo + espacio */
-  background-position: 
-    0 0,               /* primera capa */
-    100px 60px;       /* segunda capa desplazada (intercalada) */
-  opacity: 0.1;
-  z-index: -1;
-  filter: blur(0.5px);
-  transform: rotate(-25deg);
-  animation: moveBackground 120s linear infinite;
-}
-
-    @keyframes moveBackground {
-      0% {
-        transform: rotate(-25deg) translate(0, 0);
-      }
-      100% {
-        transform: rotate(-25deg) translate(200px, 200px);
-      }
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      max-width: 500px;
-      width: 100%;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h1 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-    }
-
-    .brand .pro {
-      color: #ff4d4d;
-    }
-
-    .brand .vap {
-      color: #fff;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 1em;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .discount-code {
-      font-size: 1.6em;
-      font-weight: 600;
-      color: #ffeb3b;
-      margin: 20px 0;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.5s;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 1em;
-      background: #ffeb3b;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.9s;
-    }
-
-    .button:hover {
-      background: #ffc107;
-    }
-
-    @media (max-width: 600px) {
-      .container {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gracias por Venir - MUT</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #121212, #1f1f1f);
+        color: #fff;
         padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="background-overlay"></div>
 
-  <div class="container">
-    <h1>Bienvenido a la experiencia <span class="brand"><span class="pro">PRO</span><span class="vap">VAP, The Vape Store</span></span> en MUT</h1>
-    <p>Gracias por acompañarnos en nuestra apertura. Aquí tienes un código de descuento para usar en tienda o en línea.</p>
-    <div class="discount-code" id="discountCode">Cargando...</div>
-    <a href="#" id="redirectButton" class="button">Usar Código</a>
-  </div>
+      .background-overlay {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-image: url("logo.png"), url("logo.png");
+        background-repeat: repeat;
+        background-size: 210px; /* Tamaño total: logo + espacio */
+        background-position: 0 0, /* primera capa */ 100px 60px; /* segunda capa desplazada (intercalada) */
+        opacity: 0.1;
+        z-index: -1;
+        filter: blur(0.5px);
+        transform: rotate(-25deg);
+        animation: moveBackground 120s linear infinite;
+      }
 
-  <script>
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
+      @keyframes moveBackground {
+        0% {
+          transform: rotate(-25deg) translate(0, 0);
+        }
+        100% {
+          transform: rotate(-25deg) translate(200px, 200px);
+        }
+      }
 
-    const discountCode = getQueryParam('code') || 'SIN-CÓDIGO';
-    document.getElementById('discountCode').textContent = discountCode;
+      .container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        max-width: 500px;
+        width: 100%;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
 
-    const redirectButton = document.getElementById('redirectButton');
-    redirectButton.href = 'https://www.provap.cl'; // Reemplazar con URL real
-  </script>
-</body>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+      }
+
+      .brand .pro {
+        color: #ff4d4d;
+      }
+
+      .brand .vap {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1em;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .discount-code {
+        font-size: 1.6em;
+        font-weight: 600;
+        color: #ffeb3b;
+        margin: 20px 0;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 0.5s;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 1em;
+        background: #ffeb3b;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 0.9s;
+      }
+      .button-group {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+      }
+
+      .button-group .button {
+        flex: 1;
+        text-align: center;
+      }
+
+      .button.copied {
+        background: #4caf50 !important; /* Verde */
+        color: #fff;
+      }
+      .button:hover {
+        background: #ffc107;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+
+    <div class="container">
+      <h1>
+        Bienvenido a la experiencia
+        <span class="brand"
+          ><span class="pro">PRO</span
+          ><span class="vap">VAP, The Vape Store</span></span
+        >
+        en MUT
+      </h1>
+      <p>
+        Gracias por acompañarnos en nuestra apertura. Aquí tienes un código de
+        descuento para usar en tienda o en línea.
+      </p>
+      <div class="discount-code" id="discountCode">Cargando...</div>
+      <div class="button-group">
+        <a href="#" id="copyButton" class="button">Copiar Código</a>
+        <a href="https://www.provap.cl" id="redeemButton" target="_blank" class="button">Canjear</a>
+      </div>      
+    </div>
+
+    <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const discountCode = getQueryParam("code") || "SIN-CÓDIGO";
+      const codeElement = document.getElementById("discountCode");
+      codeElement.textContent = discountCode;
+
+      const copyButton = document.getElementById("copyButton");
+      copyButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        navigator.clipboard
+          .writeText(discountCode)
+          .then(() => {
+            copyButton.textContent = "¡Copiado!";
+            copyButton.classList.add("copied");
+
+            setTimeout(() => {
+              copyButton.textContent = "Copiar Código";
+              copyButton.classList.remove("copied");
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Error al copiar el código:", err);
+            copyButton.textContent = "Error al copiar";
+          });
+      });
+    </script>
+  </body>
 </html>
-
