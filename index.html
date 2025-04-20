@@ -27,6 +27,7 @@
 
       .background-overlay {
         position: fixed;
+        background: linear-gradient(to right, #121212, #1f1f1f);
         top: -50%;
         left: -50%;
         width: 200%;
@@ -139,6 +140,17 @@
         background: #ffc107;
       }
 
+      .terms-conditions__container {
+        margin-top: 32px;
+        margin-bottom: 0px;
+      }
+
+      .terms-conditions__text {
+        font-size: 11px;
+        margin-bottom: 0px;
+        text-align: center;
+      }
+
       @media (max-width: 600px) {
         .container {
           padding: 20px;
@@ -166,7 +178,15 @@
       <div class="button-group">
         <a href="#" id="copyButton" class="button">Copiar Código</a>
         <a href="https://www.provap.cl" id="redeemButton" target="_blank" class="button">Canjear</a>
-      </div>      
+      </div>   
+      <div class="terms-conditions__container">
+        <p class="terms-conditions__text">
+          El código de descuento es válido para una única compra online. Debe ser ingresado como cupón al momento de pagar el carrito. 
+        </p>
+        <p class="terms-conditions__text">
+          Esta página es un trabajo de AFKad en colaboración con ProVap, The Vape Store.
+        </p>
+      </div>   
     </div>
 
     <script>
